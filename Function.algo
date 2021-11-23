@@ -1,0 +1,35 @@
+PROCEDURE saisie(var n:integer)
+BEGIN
+    REPEAT
+        write('أدخل رقم زوجي من فضلك')
+        read(n);
+    UNTIL (n mod 2 =0)   
+END
+FUNCTION dot_product(var V1,V2:ARRAY_OF FLOAT) : BOOLEAN
+VAR
+    res:BOOLEAN;
+    ps : FLOAT;
+BEGIN
+   res := false;
+   FOR i FROM 1 TO V1.length  DO
+       ps := ps + (V1[i]*V2[i]);
+   END_FOR
+    IF (ps=0) THEN
+        res:=true
+    END_IF
+    RETURN res ;
+END
+ALGORITHM Dot Product
+VAR
+    V1,V2 : ARRAY_OF FLOAT[];
+    n,i:INTEGER;
+BEGIN
+    saisie(n);
+    FOR i FROM 1 TO n DO  
+       IF (dot_product()=true) THEN
+           write('The two victors are orthogonal');
+           ELSE
+           write('The two victors are not orthogonal');
+       END_IF
+    END_FOR
+END
