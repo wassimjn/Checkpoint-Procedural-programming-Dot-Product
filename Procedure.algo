@@ -5,9 +5,8 @@ BEGIN
         read(n);
     UNTIL (n mod 2 =0)   
 END
-PROCEDURE  dot_product(VAR V1,V2 : ARRAY_OF INTEGER)
+PROCEDURE  dot_product(VAR V1,V2 : ARRAY_OF FLOAT , VAR ps:FLOAT)
 VAR
-    ps:FLOAT;
     i,j:INTEGER; 
 BEGIN
     
@@ -28,9 +27,11 @@ ALGORITHM Dot Product
 VAR
     V1 : ARRAY_OF FLOAT[];
     V2 : ARRAY_OF FLOAT[];
+    ps:FLOAT;
     n:INTEGER;
     
 BEGIN
    saisie(n);
-   dot_product(V1,V2);
+   dot_product(V1,V2,ps);
+    
 END
